@@ -1,0 +1,16 @@
+:root {
+    --hero-txt-size: 48px;
+    --hero-txt-weight: 800;
+
+    --secondary-txt-size: 18px;
+    --secondary-txt-weight: 400;
+
+    --header-logo-txt-size: 24px;
+
+    --info-header-txt-size: 36px;
+    --info-header-txt-weight: 800;
+
+    --quote-txt-size: 36px;
+    --quote-txt-weight: 300;
+    --quote-txt-style: italic;
+}
