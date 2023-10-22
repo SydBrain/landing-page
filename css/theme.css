@@ -1,6 +1,11 @@
 :root {
     --dark-background-color: #1F2937;
+    --light-background-color: #F9FAF8;
+    --mid-background-color: #E5E7EB;
+    
     --main-txt-color: #F9FAF8;
     --secondary-txt-color: #E5E7EB;
+    --contrast-txt-color: #1F2937;
+
     --cta-color: #3882F6;
 }
