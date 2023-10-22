@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Heorot';
+    src: url('../assets/fonts/Heorot-4rLK.ttf') format('truetype');
+    font-weight: normal;
+}
+
 :root {
     --hero-txt-size: 48px;
     --hero-txt-weight: 700;

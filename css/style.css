@@ -31,6 +31,10 @@ html {
     height: auto;
   }
 
+  figure {
+    margin: 0;
+  }
+
   /* TYPOGRAPHY */
 
   h1,
@@ -61,8 +65,8 @@ html {
   }
 
   .logo {
-    font-size: var(--header-logo-txt-size);
-    font-weight: var(--hero-txt-weight);
+    width: 80px;
+    border-radius: 50%;
   }
 
 /* THEME */
@@ -101,23 +105,47 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10rem;
-    background-color: var(--dark-background-color);
+    padding: 0.5rem 10rem;
+    background-color: var(--light-background-color);
+    border-bottom: solid 2px var(--main-txt-color);
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1.5rem;
+    gap: 4rem;
+}
+
+.nav-link > a {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2rem;
+    transition: 400ms;
+}
+
+.nav-link > a:hover {
+    color: var(--cta-color);
 }
 
 .hero {
     display: flex;
-    gap: 2rem;
     justify-content: center;
-    margin-top: 3rem;  
+    margin-top: 6rem;
+    height: 45vh;  
     text-align: center;
+    border-bottom: solid 2px var(--main-txt-color);
+    background: repeating-linear-gradient(-45deg,
+            #548796 0%, 
+            #426edf 7.14%, 
+            #3c57fd 14.28%, 
+            #633bb7 21.42%, 
+            #6441a1 28.56%, 
+            #793cda 35.7%, 
+            #ac3ff5 42.84%, 
+            #548796 50%);
+	background-size:600vw 600vw;
+	animation: bifrostRay 10s infinite linear forwards;
+    color: var(--light-background-color);
 }
 
 .hero > div {
@@ -125,7 +153,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .cta {
@@ -133,6 +161,14 @@ section {
     border-radius: 10px;
     padding: 0.5rem 1.5rem;
     width: fit-content;
+    transition: 400ms;
+    border: solid transparent 2px;
+}
+
+.cta:hover {
+    background-color: transparent;
+    border: solid 2px var(--cta-color);
+    color: var(--cta-color);
 }
 
 /* MAIN */
@@ -147,15 +183,27 @@ section {
     align-items: stretch;
     flex-wrap: wrap;
     flex-shrink: 0;
+    gap: 1rem;
+    margin: 2rem 0;
 }
 
 .card {
     width: 350px;
 }
 
+.card-title {
+    font-family: 'Heorot', sans-serif;
+    font-size: 2rem;
+}
+
 .card-img {
     border-radius: 10px;
     border: solid 2px #C0C0C0;
+}
+
+.card-subtitle {
+    margin: 1rem 0;
+    line-height: 1.5;
 }
 
 .citation {
@@ -180,6 +228,12 @@ section {
     border: solid 2px var(--main-txt-color);
     border-radius: 10px;
     padding: 0.5rem 2rem;
+    transition: 400ms;
+}
+
+.cta-2:hover {
+    background-color: var(--main-txt-color);
+    color: var(--light-background-color);
 }
 
 footer {
@@ -187,4 +241,13 @@ footer {
     padding: 2rem 0;
 }
 
+/* ANIMATIONS */
 
+@keyframes bifrostRay{
+    0%{
+      background-position-x: 0%;
+    }
+    100%{
+      background-position-x: 600vw;
+    }
+  }
