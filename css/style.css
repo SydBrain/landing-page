@@ -73,7 +73,6 @@ html {
 
   header,
   footer {
-    background-color: var(--dark-background-color);
     color: var(--main-txt-color);
   }
 
@@ -105,7 +104,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 10rem;
+    padding: 0.8rem 10rem;
     background-color: var(--light-background-color);
     border-bottom: solid 2px var(--main-txt-color);
 }
@@ -125,6 +124,27 @@ section {
 
 .nav-link > a:hover {
     color: var(--cta-color);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::before {
+    content: 'ᚠ'; 
+    display: block;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cta-color);
+}
+
+.nav-link:hover::before {
+    opacity: 1;
 }
 
 .hero {
@@ -189,6 +209,16 @@ section {
 
 .card {
     width: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    border: solid transparent 2px;
+    border-radius: 20px;
+}
+
+.card:hover {
+    border: solid 2px #C0C0C0;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -202,6 +232,7 @@ section {
 }
 
 .card-subtitle {
+    font-family: 'Heorot', sans-serif;
     margin: 1rem 0;
     line-height: 1.5;
 }
@@ -214,14 +245,44 @@ section {
     font-weight: var(--info-header-txt-weight);
 }
 
+.quote-section {
+    border-top: solid 2px var(--main-txt-color);
+    border-bottom: solid 2px var(--main-txt-color);
+    background-image: url('../assets/images/runic-pattern.png');
+    background-repeat: repeat;
+    background-size: auto; 
+    color: var(--light-background-color);
+    position: relative;
+    z-index: 1;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.623); /* Dark overlay to improve text contrast */
+    z-index: -1; /* Place the overlay below the text */
+}
+
+.quote-txt, .citation {
+    position: relative; /* Needed for shadow to apply correctly */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adding a shadow to the text */
+}
+
 .cta-banner {
+    width: 50%;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--cta-color);
     padding: 2rem 4rem;
     border-radius: 10px;
-
+    gap: 2rem;
+    border: solid 2px var(--main-txt-color);
 }
 
 .cta-2 {
@@ -239,6 +300,8 @@ section {
 footer {
     text-align: center;
     padding: 2rem 0;
+    color: var(--light-background-color);
+    background-color: var(--cta-color);
 }
 
 /* ANIMATIONS */
